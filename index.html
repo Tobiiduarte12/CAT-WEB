@@ -1,81 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
-    <!-- ****** Font-Awesome ******** -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
-    <header>
-        <figure>
-            <a href="#"><img src="./assets/113728508.jfif" alt="#"></a>
-        </figure>
-        <nav class="nav-header">
-            <ul class="nav-list">
-                <li><a href="#">inicio</a></li>
-                <li><a href="#">productos</a></li>
-                <li><a href="#">about us</a></li>
-            </ul>
-        </nav>
-        <button id="btn-cart" onclick="alertCart()"><i class="fa-solid fa-cart-arrow-down"></i></button>
-    </header>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="./style.css" />
+		<!-- ****** Font-Awesome ******** -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+			integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+	</head>
+	<body>
+		<header>
+			<figure>
+				<a href="#"><img src="./assets/113728508.jfif" alt="#" /></a>
+			</figure>
+			<nav class="nav-header">
+				<ul class="nav-list">
+					<li class="nav-links"><a href="#">inicio</a></li>
+					<li class="nav-links"><a href="#">productos</a></li>
+					<li class="nav-links"><a href="#">about us</a></li>
+				</ul>
+			</nav>
+			<button id="btn-cart" onclick="alertCart()">
+				<i class="fa-solid fa-cart-arrow-down"></i>
+			</button>
+		</header>
 
-    <section id="hero">
-        <h1 id="title"> Bienvenidos a la practica para manipular el DOMinic toretto</h1>
-        <div class="text-body">
-            <h2>DOM: Document Object Model</h2>
-            <p class="parrafo-modificar">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum quis aut vero omnis nihil, eius quas inventore ipsa soluta. Voluptas magnam eius, sapiente obcaecati quaerat repellat soluta saepe, molestiae explicabo nihil maiores dolor ea? Praesentium enim labore iure? Reiciendis totam officia obcaecati nam tenetur perspiciatis eum pariatur blanditiis beatae, dicta a similique quae accusantium amet minus odio! Commodi voluptate dolores omnis corrupti iste, necessitatibus aperiam. Aliquam aperiam nemo quasi nulla nobis, cupiditate, illo iure ducimus quam aut quos culpa eos non. </p>
-        </div>
-        
-    </section>
+		<section id="hero">
+			<h1 id="title">
+				Bienvenidos a la practica para manipular el DOMinic toretto
+			</h1>
+			<h2 id="title-h2">Haceme click si te animas capo</h2>
+			<div class="text-body">
+				<h2>DOM: Document Object Model</h2>
+				<p class="parrafo-modificar">Lorem ipsum dolor sit amet</p>
+			</div>
+		</section>
 
-    <section id="section-two">
-        <div class="sec-two-title">
-            <h2>Formulario</h2>
-            <p>Completa el siguiente formulario</p>
-            <div class="div-vacio">  </div>
-        </div>
-        <form action="" id="sec-two-form">
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" required>
+		<section id="section-two">
+			<div class="sec-two-title">
+				<h2>Formulario</h2>
+				<p>Completa el siguiente formulario</p>
+				<div class="div-vacio"></div>
+			</div>
+			<form action="" id="sec-two-form">
+				<label for="name">Nombre:</label>
+				<input type="text" id="name" required />
 
-            <label for="lastName">Apellido:</label>
-            <input type="text" id="lastName" required>
+				<label for="lastName">Apellido:</label>
+				<input type="text" id="lastName" required />
 
-            <label for="email">Correo:</label>
-            <input type="email" id="email" required>
+				<label for="email">Correo:</label>
+				<input type="email" id="email" required />
 
-            <label for="pass">Contraseña:</label>
-            <input type="password" id="pass" required>
+				<label for="pass">Contraseña:</label>
+				<input type="password" id="pass" required />
 
-            <label for="birthDate">Ingrese su fecha de nacimiento:</label>
-            <input type="date" id="birthDate" required>
-            
-            <div id="label-novedades">
-                <label for="novedades" >Deseo recibir novedades de nuevos productos</label>
-                <input type="checkbox" id="novedades">
-            </div>
-            
-            <button onclick="mostrarAlert()" class="btn-enviar" type="submit">Enviar</button>
-        </form>
-    </section>
+				<label for="birthDate">Ingrese su fecha de nacimiento:</label>
+				<input type="date" id="birthDate" required />
 
-    <footer>
-        <p>Este es un documento hecho por: <a href="https://github.com/Tobiiduarte12" target="_blank">Tobias Duarte</a></p>
-        <nav class="nav-footer">
-            <ul class="nav-list">
-                <li><a href="#">inicio</a></li>
-                <li><a href="#">productos</a></li>
-                <li><a href="#">about us</a></li>
-            </ul>
-        </nav>
-    </footer>
+				<div id="label-novedades">
+					<label for="novedades"
+						>Deseo recibir novedades de nuevos productos</label
+					>
+					<input type="checkbox" id="novedades" />
+				</div>
 
-    <script src="./main.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-</body>
+				<button onclick="mostrarAlert()" class="btn-enviar" type="submit">
+					Enviar
+				</button>
+			</form>
+		</section>
+
+		<section id="section-three">
+			<h2>Hagamos un contador :D</h2>
+			<div class="contador-container">
+				<h2 class="title-contador">
+					Contador: <span id="resultado"> 0 </span>
+				</h2>
+				<button class="btn-aumentar btns">Aumentar</button>
+				<button class="btn-disminuir btns">Disminuir</button>
+			</div>
+		</section>
+
+		<footer>
+			<p>
+				Este es un documento hecho por:
+				<a href="https://github.com/Tobiiduarte12" target="_blank"
+					>Tobias Duarte</a
+				>
+			</p>
+			<nav class="nav-footer">
+				<ul class="nav-list">
+					<li><a href="#">inicio</a></li>
+					<li><a href="#">productos</a></li>
+					<li><a href="#">about us</a></li>
+				</ul>
+			</nav>
+		</footer>
+
+		<script src="./main.js"></script>
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	</body>
 </html>
