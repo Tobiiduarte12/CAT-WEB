@@ -1,22 +1,24 @@
-function contadorExtra() {
-	const btnAumentar = document.querySelector(".btn-aumentar");
-	const btnDisminuir = document.querySelector(".btn-disminuir");
-	const resultado = document.getElementById("resultado");
+const h2Cambiar = document.querySelector("#title-h2");
+const mostrarNigga = document.querySelector(".text-body");
 
-	let contador = 0;
+const mostrarImagen = () => {
+	mostrarNigga.classList.toggle("mostrar");
+};
 
-	const aumentar = () => {
-		contador++;
-		resultado.textContent = contador;
-	};
+h2Cambiar.addEventListener("click", mostrarImagen);
 
-	const disminuir = () => {
-		contador--;
-		resultado.textContent = contador;
-	};
+const michiCambiar = document.querySelector("#michiCambiar");
+const btnCambiar = document.querySelector("#btn-Cambiar-Michi");
 
-	btnAumentar.addEventListener("click", aumentar);
-	btnDisminuir.addEventListener("click", disminuir);
-}
+btnCambiar.addEventListener("click", () => {
+	michiCambiar.src = `./assets/imgs/michi${Math.floor(Math.random() * 20)}.jpg`;
+});
 
-contadorExtra();
+const btnCambiarMemoide = document.querySelector("#cambiarMemoide");
+const imgMemoide = document.querySelector("#memoide");
+
+btnCambiarMemoide.addEventListener("click", () => {
+	imgMemoide.src = `./assets/imgs-memes-michis/meme${Math.floor(
+		Math.random() * 6
+	)}.jpeg`;
+});
