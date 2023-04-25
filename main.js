@@ -22,3 +22,19 @@ btnCambiarMemoide.addEventListener("click", () => {
 		Math.random() * 6
 	)}.jpeg`;
 });
+
+const inputUsername = document.querySelector("#inputUsername");
+const inputPassword = document.querySelector("#inputPass");
+const inputEmail = document.querySelector("#inputEmail");
+const btnForm = document.querySelector("#btnForm");
+
+function selectFocus() {
+	this.classList.toggle("select-Focus");
+}
+
+inputUsername.addEventListener("focus", selectFocus);
+inputUsername.addEventListener("blur", selectFocus);
+inputPassword.addEventListener("focus", selectFocus);
+inputPassword.addEventListener("blur", selectFocus);
+inputEmail.addEventListener("focus", selectFocus);
+inputEmail.addEventListener("blur", selectFocus);
