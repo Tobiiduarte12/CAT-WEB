@@ -27,6 +27,7 @@ const inputUsername = document.querySelector("#inputUsername");
 const inputPassword = document.querySelector("#inputPass");
 const inputEmail = document.querySelector("#inputEmail");
 const btnForm = document.querySelector("#btnForm");
+const formularioAEnviar = document.querySelector("#form");
 
 function selectFocus() {
 	this.classList.toggle("select-Focus");
@@ -38,3 +39,13 @@ inputPassword.addEventListener("focus", selectFocus);
 inputPassword.addEventListener("blur", selectFocus);
 inputEmail.addEventListener("focus", selectFocus);
 inputEmail.addEventListener("blur", selectFocus);
+
+const btnSubmit = (e) => {
+	e.preventDefault();
+	console.log(inputUsername.value);
+	console.log(inputEmail.value);
+	console.log(inputPassword.value);
+	formularioAEnviar.reset();
+};
+
+formularioAEnviar.addEventListener("submit", btnSubmit);
