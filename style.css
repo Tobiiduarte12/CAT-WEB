@@ -345,6 +345,39 @@ header nav a:hover {
 	z-index: 100;
 }
 
+#sectionFive {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: 100%;
+	height: auto;
+	gap: 20px;
+}
+
+.titleSect5 {
+	color: white;
+	font-size: 1.4rem;
+}
+
+.formSect5 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	gap: 5px;
+}
+
+.formSect5 input {
+	background-color: rgb(53, 51, 51);
+	border: none;
+	padding: 5px 5px;
+	border-radius: 10px;
+	color: white;
+	border: none;
+}
+
 footer {
 	display: flex;
 	justify-content: space-around;

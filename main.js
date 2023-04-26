@@ -49,3 +49,32 @@ const btnSubmit = (e) => {
 };
 
 formularioAEnviar.addEventListener("submit", btnSubmit);
+
+// ***** to do list *****
+
+const formTask = document.querySelector(".formSect5");
+const inputTask = document.querySelector(".input-task");
+const btnAdd = document.querySelector("#btnAddTask");
+const taskList = document.querySelector(".listTasks");
+const btnDeleteAll = document.querySelector("#btnDeleteTask");
+
+let tasks = []; // array vacío para guardar las tareas
+
+// funcion para agregar tareas
+function addTask(e) {
+	e.preventDefault();
+	const taskName = inputTask.value.trim();
+	if (taskName.length === 0) {
+		alert(`Por favor, ingresa una terea`);
+		return;
+	}
+	// console.log(taskName);
+	tasks = [...tasks, { name: taskName, taskId: tasks.length + 1 }];
+	console.log(tasks);
+	inputTask.value = "";
+}
+const init = () => {
+	formTask.addEventListener("submit", addTask);
+};
+
+init();
