@@ -78,3 +78,36 @@ const init = () => {
 };
 
 init();
+
+// creando elementos en el DOM desde JS
+
+let card = document.createElement("div");
+card.classList.add("card");
+
+let cardImg = document.createElement("img");
+cardImg.src = "./assets/imgs/michi1.jpg";
+cardImg.classList.add("imgCreada");
+
+let cardTitle = document.createElement("h2");
+cardTitle.classList.add("card-title");
+cardTitle.innerText = "titulo de la tarjeta";
+
+let cardBody = document.createElement("div");
+cardBody.classList.add("card-body");
+cardBody.innerText = "contenido de la tarjeta";
+
+let cardBtn = document.createElement("button");
+cardBtn.classList.add("btns");
+cardBtn.innerHTML = "Click me pls";
+
+card.appendChild(cardImg);
+card.appendChild(cardTitle);
+card.appendChild(cardBody);
+card.appendChild(cardBtn);
+
+const cardContainer = document.querySelector(".card-container");
+cardContainer.appendChild(card);
+console.dir(card);
+
+const sectionPokemon = document.querySelector("#sectionPokemon");
+const pokeContainer = document.querySelector(".container-cards");

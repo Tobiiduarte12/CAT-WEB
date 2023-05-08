@@ -378,6 +378,58 @@ header nav a:hover {
 	border: none;
 }
 
+.imgCreada {
+	width: auto;
+	height: 200px;
+	border-radius: 10px;
+}
+
+#sectionSix {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+	width: 100%;
+	background-color: #2f3133;
+	padding: 50px;
+}
+
+.card-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	/* height: auto; */
+	gap: 20px;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid white;
+	transition: all 0.3s ease;
+	background-color: #141516;
+}
+.card-container:hover {
+	border: 1px solid red;
+	background-color: transparent;
+}
+
+#sectionPokemon {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	align-items: center;
+	gap: 20px;
+	padding: 100px;
+	background-color: #0c66ce;
+	margin-top: 50px;
+}
+
+.container-cards {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	padding: 20px;
+}
 footer {
 	display: flex;
 	justify-content: space-around;
