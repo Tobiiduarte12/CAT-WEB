@@ -2,7 +2,7 @@ const h2Cambiar = document.querySelector("#title-h2");
 const mostrarNigga = document.querySelector(".text-body");
 
 const mostrarImagen = () => {
-	mostrarNigga.classList.toggle("mostrar");
+  mostrarNigga.classList.toggle("mostrar");
 };
 
 h2Cambiar.addEventListener("click", mostrarImagen);
@@ -11,16 +11,16 @@ const michiCambiar = document.querySelector("#michiCambiar");
 const btnCambiar = document.querySelector("#btn-Cambiar-Michi");
 
 btnCambiar.addEventListener("click", () => {
-	michiCambiar.src = `./assets/imgs/michi${Math.floor(Math.random() * 20)}.jpg`;
+  michiCambiar.src = `./assets/imgs/michi${Math.floor(Math.random() * 20)}.jpg`;
 });
 
 const btnCambiarMemoide = document.querySelector("#cambiarMemoide");
 const imgMemoide = document.querySelector("#memoide");
 
 btnCambiarMemoide.addEventListener("click", () => {
-	imgMemoide.src = `./assets/imgs-memes-michis/meme${Math.floor(
-		Math.random() * 6
-	)}.jpeg`;
+  imgMemoide.src = `./assets/imgs-memes-michis/meme${Math.floor(
+    Math.random() * 6
+  )}.jpeg`;
 });
 
 const inputUsername = document.querySelector("#inputUsername");
@@ -30,7 +30,7 @@ const btnForm = document.querySelector("#btnForm");
 const formularioAEnviar = document.querySelector("#form");
 
 function selectFocus() {
-	this.classList.toggle("select-Focus");
+  this.classList.toggle("select-Focus");
 }
 
 inputUsername.addEventListener("focus", selectFocus);
@@ -41,11 +41,11 @@ inputEmail.addEventListener("focus", selectFocus);
 inputEmail.addEventListener("blur", selectFocus);
 
 const btnSubmit = (e) => {
-	e.preventDefault();
-	console.log(inputUsername.value);
-	console.log(inputEmail.value);
-	console.log(inputPassword.value);
-	formularioAEnviar.reset();
+  e.preventDefault();
+  console.log(inputUsername.value);
+  console.log(inputEmail.value);
+  console.log(inputPassword.value);
+  formularioAEnviar.reset();
 };
 
 formularioAEnviar.addEventListener("submit", btnSubmit);
@@ -62,19 +62,19 @@ let tasks = []; // array vacío para guardar las tareas
 
 // funcion para agregar tareas
 function addTask(e) {
-	e.preventDefault();
-	const taskName = inputTask.value.trim();
-	if (taskName.length === 0) {
-		alert(`Por favor, ingresa una terea`);
-		return;
-	}
-	// console.log(taskName);
-	tasks = [...tasks, { name: taskName, taskId: tasks.length + 1 }];
-	console.log(tasks);
-	inputTask.value = "";
+  e.preventDefault();
+  const taskName = inputTask.value.trim();
+  if (taskName.length === 0) {
+    alert(`Por favor, ingresa una terea`);
+    return;
+  }
+  // console.log(taskName);
+  tasks = [...tasks, { name: taskName, taskId: tasks.length + 1 }];
+  console.log(tasks);
+  inputTask.value = "";
 }
 const init = () => {
-	formTask.addEventListener("submit", addTask);
+  formTask.addEventListener("submit", addTask);
 };
 
 init();
@@ -107,7 +107,48 @@ card.appendChild(cardBtn);
 
 const cardContainer = document.querySelector(".card-container");
 cardContainer.appendChild(card);
-console.dir(card);
 
 const sectionPokemon = document.querySelector("#sectionPokemon");
 const pokeContainer = document.querySelector(".container-cards");
+
+// fetch("https://pokeapi.co/api/v2/pokemon/4")
+//   .then((res) => res.json())
+//   //   .then((data) => console.log(data))
+//   .then((data) => console.log(`hola, soy ${data.name}`))
+//   //   .then((data) => console.log(`Hola soy ${data.abilities}`))
+//   .catch((error) => console.error(error));
+
+const getCharmander = async () => {
+  try {
+    const response = await fetch("https://pokeapi.co/api/v2/pokemon/charizard");
+    const data = await response.json();
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+const contenedorPokemon = document.querySelector(".contenedor");
+
+const templatePokemon = (pokemon) => {
+  const { name, sprites, types } = pokemon;
+  const pokemonHTML = `		
+  	<div class="card">
+  		<img src="${sprites.other.home.front_default}"  alt="${name}"> 
+  		<h2>${name}</h2>
+  		<p>${types[0].type.name}</p>
+	</div> `;
+  contenedorPokemon.innerHTML = pokemonHTML;
+};
+
+const renderPokemon = async () => {
+  try {
+    const pokemon = await getCharmander();
+    templatePokemon(pokemon);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+renderPokemon();
